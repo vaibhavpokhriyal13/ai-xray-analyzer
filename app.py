@@ -39,8 +39,12 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Load model
-model = tf.keras.models.load_model("model.h5")
+# Load and cache model
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model("model.h5")
+
+model = load_model()
 
 IMG_SIZE = 224
 
@@ -78,7 +82,7 @@ if uploaded_file:
     # Display image
     with col1:
         image = Image.open(uploaded_file).convert('RGB')
-        st.image(image, caption="Uploaded X-Ray",width=400)
+        st.image(image, caption="Uploaded X-Ray", width=400)
 
     # Prediction section
     with col2:
@@ -104,7 +108,7 @@ if uploaded_file:
 
                     confidence = prediction * 100
 
-                    st.error(f"⚠ Pneumonia Detected")
+                    st.error("⚠ Pneumonia Detected")
 
                     st.progress(int(confidence))
 
