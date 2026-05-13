@@ -78,7 +78,7 @@ if uploaded_file:
     # Display image
     with col1:
         image = Image.open(uploaded_file).convert('RGB')
-        st.image(image, caption="Uploaded X-Ray", use_container_width=True)
+        st.image(image, caption="Uploaded X-Ray",width=400)
 
     # Prediction section
     with col2:
