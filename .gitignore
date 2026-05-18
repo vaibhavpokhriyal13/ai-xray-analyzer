@@ -1,3 +1,18 @@
-venv/
+
+# Dataset
+chest_xray/
+
+# Models
+*.h5
+*.pth
+*.pt
+*.ckpt
+
+# Python
 __pycache__/
 *.pyc
+
+# Training outputs
+runs/
+logs/
+weights/
