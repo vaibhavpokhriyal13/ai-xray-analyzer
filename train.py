@@ -68,6 +68,6 @@ model.fit(
 )
 
 # Save model
-model.save("model.h5")
+model.save("/content/drive/MyDrive/models/model.h5")
 
 print("Model Saved Successfully!")
