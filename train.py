@@ -20,7 +20,7 @@ test_datagen = ImageDataGenerator(
 
 # Load training data
 train_data = train_datagen.flow_from_directory(
-    'chest_xray/train',
+    '/content/drive/MyDrive/datasets/chest_xray/train',
     target_size=(IMG_SIZE, IMG_SIZE),
     batch_size=BATCH_SIZE,
     class_mode='binary'
@@ -28,7 +28,7 @@ train_data = train_datagen.flow_from_directory(
 
 # Load testing data
 test_data = test_datagen.flow_from_directory(
-    'chest_xray/test',
+    '/content/drive/MyDrive/datasets/chest_xray/test',
     target_size=(IMG_SIZE, IMG_SIZE),
     batch_size=BATCH_SIZE,
     class_mode='binary'
